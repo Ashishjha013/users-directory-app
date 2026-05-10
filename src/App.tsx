@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
+import UserCard from './components/UserCard';
 
 type Users = {
   id: number;
@@ -39,19 +40,25 @@ function App() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
 
   return (
-    <div>
-      <h1>Users Directory</h1>
+    <div className="app">
+      <h1 className="title">Users Directory</h1>
 
-      {users.map((user) => (
-        <div key={user.id}>
-          <h3>{user.name.first} {user.name.last}</h3>
-          <p>{user.email}</p>
-        </div>
-      ))}
+      <p className="subtitle">Discover and connect with amazing people</p>
+
+      <div className="users-container">
+        {users.map((user) => (
+          <UserCard
+            key={user.id}
+            firstName={user.name.first}
+            lastName={user.name.last}
+            email={user.email}
+          />
+        ))}
+      </div>
     </div>
   );
 }
