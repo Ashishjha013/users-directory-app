@@ -1,73 +1,125 @@
-# React + TypeScript + Vite
+# 🌟 Users Directory App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and minimal Users Directory application built with **React, TypeScript, Vite, and TailwindCSS**.
 
-Currently, two official plugins are available:
+This project fetches random users from a public API and displays them in beautiful premium user cards with a clean UI.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+# 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- ⚛️ React + TypeScript
+- ⚡ Vite for fast development
+- 🎨 TailwindCSS modern UI
+- 🌐 API data fetching
+- 🧩 Reusable components
+- 📱 Responsive layout
+- ✨ Premium glassmorphism-inspired design
+- 🔥 Clean project structure
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# 📸 Demo
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+[🎥 Watch Project Demo](../demo.mp4)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+
+---
+
+# 🛠️ Tech Stack
+
+- React
+- TypeScript
+- Vite
+- TailwindCSS
+
+---
+
+# 📂 Folder Structure
+
+```bash
+src/
+│
+├── components/
+│   └── UserCard.tsx
+│
+├── App.tsx
+├── main.tsx
+├── index.css
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# 🌐 API Used
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+https://api.freeapi.app/api/v1/public/randomusers?page=1&limit=10
 ```
+
+---
+
+# ⚙️ Installation
+
+### Clone the repository
+
+```bash
+git clone https://github.com/your-username/users-directory-app.git
+```
+
+### Move into the project folder
+
+```bash
+cd users-directory-app
+```
+
+### Install dependencies
+
+```bash
+pnpm install
+```
+
+### Start development server
+
+```bash
+pnpm dev
+```
+
+---
+
+# 📚 What I Learned
+
+- React component architecture
+- Props in TypeScript
+- API fetching with useEffect
+- State management with useState
+- Rendering lists with map()
+- Building reusable UI components
+- Clean folder structure
+- TailwindCSS styling
+
+---
+
+# 🚀 Future Improvements
+
+- Search functionality
+- User modal/details page
+- Pagination
+- Dark/light mode toggle
+- Framer Motion animations
+
+---
+
+## ✨ Author
+**Ashish Kumar Jha**  
+📍 India • Full Stack Developer
+
+---
+
+## 📬 Contact
+- GitHub: https://github.com/Ashishjha013  
+- LinkedIn: https://www.linkedin.com/in/ashishjha13  
+- Email: ashishjha1304@gmail.com  
+
+---
+
