@@ -1,14 +1,23 @@
-import { useState, useEffect } from 'react';
-import './App.css';
+import { useEffect, useState } from 'react';
 import UserCard from './components/UserCard';
 
 type Users = {
   id: number;
+
+  login: {
+    username: string;
+  };
+
   name: {
     first: string;
     last: string;
   };
+
   email: string;
+
+  picture: {
+    large: string;
+  };
 };
 
 function App() {
@@ -26,8 +35,6 @@ function App() {
 
         const data = await response.json();
 
-        console.log(data);
-
         setUsers(data.data.data);
       } catch (error) {
         console.error(error);
@@ -40,26 +47,37 @@ function App() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-[#07111f] text-white text-2xl font-semibold">
+        Loading...
+      </div>
+    );
   }
 
   return (
-    <div className="app">
-      <h1 className="title">Users Directory</h1>
+    <main className="app-shell">
+      <div className="app-bg" />
 
-      <p className="subtitle">Discover and connect with amazing people</p>
+      <div className="relative mx-auto max-w-7xl px-6 py-20">
+        <div className="mb-16 text-center">
+          <h1 className="title-text mb-4">Users Directory</h1>
+          <p className="subtitle-text">Discover beautiful user profiles</p>
+        </div>
 
-      <div className="users-container">
-        {users.map((user) => (
-          <UserCard
-            key={user.id}
-            firstName={user.name.first}
-            lastName={user.name.last}
-            email={user.email}
-          />
-        ))}
+        <div className="grid gap-7 sm:grid-cols-2 xl:grid-cols-3">
+          {users.map((user) => (
+            <UserCard
+              key={user.id}
+              image={user.picture.large}
+              firstName={user.name.first}
+              lastName={user.name.last}
+              email={user.email}
+              username={user.login.username}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </main>
   );
 }
 
