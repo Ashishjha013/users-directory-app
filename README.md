@@ -21,7 +21,7 @@ This project fetches random users from a public API and displays them in beautif
 
 # 📸 Demo
 
-[🎥 Watch Project Demo](../demo.mp4)
+[🎥 Watch Project Demo](./demo.gif)
 
 
 
